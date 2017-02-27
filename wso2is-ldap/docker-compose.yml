@@ -3,7 +3,9 @@ version: "3"
 services:
 
   wso2:
-    image: isim/wso2is
+    build:
+      context: .
+      dockerfile: Dockerfile-wso2is
     container_name: wso2is
     ports:
       - "9443:9443"

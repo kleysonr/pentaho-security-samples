@@ -1,0 +1,14 @@
+FROM isim/wso2is
+MAINTAINER Kleyson Rios, krios@pentaho.com
+
+# set env
+ENV TERM xterm
+
+# set alias
+RUN echo "alias ll='ls --color=auto -la'" >> /root/.bashrc
+
+RUN apt-get update -y
+
+# install required softwares
+RUN apt-get install -y vim net-tools telnet iputils-ping && \
+    rm -rf /var/lib/apt/lists/*
