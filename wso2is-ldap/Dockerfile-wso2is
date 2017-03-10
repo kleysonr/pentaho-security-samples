@@ -12,3 +12,18 @@ RUN apt-get update -y
 # install required softwares
 RUN apt-get install -y vim net-tools telnet iputils-ping && \
     rm -rf /var/lib/apt/lists/*
+
+# Add files
+RUN mkdir /wso2is
+ADD wso2is /wso2is
+
+# Add pentaho public key to WSO2 keystore
+RUN cp /opt/wso2is-5.3.0/repository/resources/security/wso2carbon.jks /opt/wso2is-5.3.0/repository/resources/security/wso2carbon.jks.bak
+RUN keytool -import -file /wso2is/pentaho.pub -alias pentaho -keystore /opt/wso2is-5.3.0/repository/resources/security/wso2carbon.jks -storepass wso2carbon -noprompt
+
+# Configuration to make LDAP Primary User Store
+RUN cp /opt/wso2is-5.3.0/repository/conf/user-mgt.xml /opt/wso2is-5.3.0/repository/conf/user-mgt.xml.bak
+RUN cp /opt/wso2is-5.3.0/repository/conf/identity/embedded-ldap.xml /opt/wso2is-5.3.0/repository/conf/identity/embedded-ldap.xml.bak
+
+RUN cp /wso2is/user-mgt.xml /opt/wso2is-5.3.0/repository/conf/user-mgt.xml
+RUN cp /wso2is/embedded-ldap.xml /opt/wso2is-5.3.0/repository/conf/identity/embedded-ldap.xml
