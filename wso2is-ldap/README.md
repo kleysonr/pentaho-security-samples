@@ -37,8 +37,8 @@ Configuring
 - Build the WSO2 IS server.
 > **docker-compose build**
 
-- Starts the WSO2 IS and OpenLDAP servers
-> **docker-compose build**
+- Starts new WSO2 IS and OpenLDAP containers.
+> **docker-compose up**
 > 
 > **Note:**
 >
