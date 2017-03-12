@@ -29,7 +29,9 @@ Configuring
 
 - Execute the following comands.
 > **docker rm openldap**
+>
 > **docker rm wso2is**
+>
 > **docker-compose rm**
 
 - Build the WSO2 IS server.
@@ -44,6 +46,7 @@ Configuring
 
 - Open a new terminal and import the users into the OpenLDAP
 > **docker exec -it openldap /bin/bash**
+>
 > **ldapadd -x -D "cn=admin,dc=example,dc=com" -w admin -H ldap:// -f /sample.ldif**
 
 - In the previous terminal, press CTRL+C to stop the containers and start both again
