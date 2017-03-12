@@ -99,7 +99,7 @@ Configuring
 
 - Start BA Server.
 
-- Enter on the browser http://localhost:8080/pentaho/Home and you should be redirect to authenticate on the IdP server.
+- Enter on the browser **http://localhost:8080/pentaho/Home** and you should be redirected to authenticate on the IdP server.
 
 ----------
 
