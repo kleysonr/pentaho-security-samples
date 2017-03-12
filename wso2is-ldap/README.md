@@ -65,7 +65,7 @@ Configuring
 >
 >Resumes a wso2is and openldap containers.
 
--  Open the browser and enter the https://localhost:9443/carbon and sign-in using admin/password.
+-  Open the browser and enter **https://localhost:9443/carbon** and sign-in using **admin/password**.
 
 -  Click in **Service Providers -> Add** to add a new service provider. Use **pentaho** as the **Service Provider Name**.
 
