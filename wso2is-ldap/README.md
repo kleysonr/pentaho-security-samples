@@ -65,6 +65,28 @@ Configuring
 >
 >Resumes a wso2is and openldap containers.
 
+-  Open the browser and enter the https://localhost:9443/carbon and sign-in using admin/password.
+
+-  Click in **Service Providers -> Add** to add a new service provider. Use **pentaho** as the **Service Provider Name**.
+
+-  After register click in **Inbound Authentication Configuration -> SAML2 Web SSO Configuration -> Configure**.
+
+-  Select **Metadata File Configuration** and upload the **pentaho-security-samples/wso2is-ldap/metadata/pentaho-sp.xml** file.
+
+-  Click **Edit** for the new pentaho Issuer created.
+
+-  Select **Enable Response Signing**.
+
+-  For **SLO Response URL** set **http://localhost:8080/pentaho/saml/SingleLogout** and update.
+
+-  Expand **Local & Outbound Authentication Configuration**, select **Use user store domain in local subject identifier** and update.
+
+-  Click in **Identity Providers -> Resident**.
+
+-  Expand **Inbound Authentication Configuration -> SAML2 Web SSO Configuration**.
+
+-  For **Identity Provider Entity Id** set the value as **Wso2SSO** and update.
+
 -  Copy recursively the **pentaho-server** folder to **install_pentaho_folder/pentaho-server** folder.
 
 - (EE Only) Edit the **system/pentaho-spring-beans.xml** file and change the **``<import resource="applicationContext-spring-security-saml-ce.xml" />``** to **``<import resource="applicationContext-spring-security-saml-ee.xml"``** />
