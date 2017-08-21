@@ -97,6 +97,19 @@ Configuring
 - Clear the karaf cache
 > rm -rf **``install_pentaho_folder/pentaho-server/pentaho-solutions/system/karaf/caches/default/*``**
 
+- Edit the **tomcat/webapps/pentaho/WEB-INF/web.xml** file, search for the tag **``<session-config>``** and make sure to have the configuration below:
+> ``<session-config>``
+>
+> ``  <session-timeout>120</session-timeout>``
+>
+> ``  <cookie-config>``
+>
+> ``    <name>JSESSIONID_PENTAHO</name>``
+>
+> ``  </cookie-config>``
+>  
+> ``</session-config>``
+
 - Start BA Server.
 
 - Enter on the browser **http://localhost:8080/pentaho/Home** and you should be redirected to authenticate on the IdP server.
