@@ -79,7 +79,7 @@ Configuring
 
 -  For **SLO Response URL** set **http://localhost:8080/pentaho/saml/SingleLogout** and update.
 
--  Expand **Local & Outbound Authentication Configuration**, select **Use user store domain in local subject identifier** and update.
+-  Expand **Local & Outbound Authentication Configuration**, make sure that the **Use user store domain in local subject identifier** option is unchecked.
 
 -  Click in **Identity Providers -> Resident**.
 
